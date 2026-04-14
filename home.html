@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quân Đoàn AXKLT</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="video-bg"></div> <div class="container">
+        <div class="card">
+            <div class="badge">LV4 🔥</div>
+            <h1 class="clan-name">AXKLT</h1>
+
+            <div class="avatar-wrapper">
+                <img src="axklt.png" class="avatar" alt="Clan Logo">
+            </div>
+
+            <p id="hello">Chào mừng chiến binh!</p>
+            
+            <div class="btn-group">
+                <button class="btn-leader" onclick="goLeader()">👑 CHỦ QUÂN ĐoÀN</button>
+                <button class="btn-member" onclick="toggleMembers()">👥 THÀNH VIÊN</button>
+            </div>
+        </div>
+
+        <div id="memberList" class="members"></div>
+    </div>
+
+    <div id="popup" class="modal">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <div class="popup-content">
+                <img id="pImg" src="" alt="">
+                <h2 id="pName"></h2>
+                <span id="pRole" class="tag"></span>
+                <p id="pSkill"></p>
+                <p id="pDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop src="nhac.mp3"></audio>
+    <script src="main.js"></script>
+</body>
+</html>

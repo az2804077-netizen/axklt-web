@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leader Profile - AXKLT</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <div class="container">
+        <div class="card">
+            <div class="badge">LEADER 👑</div>
+            <h1 class="clan-name">AXKLT</h1>
+
+            <div class="avatar-wrapper">
+                <img src="leader.png" class="avatar" alt="Leader">
+                <div class="border-spin"></div>
+            </div>
+
+            <h2 class="leader-name">HIỂN 8B</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <p>Tỉ lệ thắng</p>
+                    <img src="tilethnag.png" alt="Win Rate">
+                </div>
+                <div class="stat-item">
+                    <p>Tỉ lệ Headshot</p>
+                    <img src="tileheadshot.png" alt="Headshot Rate">
+                </div>
+                <div class="stat-item large">
+                    <p>Chỉ số tổng quát (Click để phóng to)</p>
+                    <img src="chiso1.png" alt="Stats 1">
+                </div>
+                <div class="stat-item">
+                    <img src="chiso2.png" alt="Stats 2">
+                </div>
+                <div class="stat-item">
+                    <img src="chiso3.png" alt="Stats 3">
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-member" onclick="goBack()">⬅ QUAY LẠI</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal-zoom" onclick="closeZoom()">
+        <span class="close-zoom">&times;</span>
+        <img class="modal-content" id="imgZoom">
+    </div>
+
+    <audio id="bgMusic" loop src="nhac.mp3"></audio>
+    <script src="main.js"></script>
+    <script>
+        function goBack(){ window.history.back(); }
+
+        function openZoom(imgElement) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("imgZoom");
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeZoom() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Tự động gán sự kiện zoom cho tất cả ảnh chỉ số
+        document.querySelectorAll('.stat-item img').forEach(img => {
+            img.onclick = function() { openZoom(this); };
+        });
+    </script>
+</body>
+</html>
