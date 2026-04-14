@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>AXKLT Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1 id="name">AXKLT</h1>
+
+    <img src="axklt.png">
+
+    <p>ID: 3085836646</p>
+    <div class="level">LV4 🔥</div>
+
+    <!-- THIỆP -->
+    <div class="card" onclick="showInvite()">
+        📩 Gia nhập quân đoàn AXKLT
+    </div>
+
+    <button onclick="showUsers()">👤 Xem tài khoản</button>
+    <button onclick="logout()">Đăng xuất</button>
+
+    <div id="list"></div>
+
+</div>
+
+<script src="main.js"></script>
+
+<script>
+let user = localStorage.getItem("currentUser");
+if(user){
+    document.getElementById("name").innerText = user;
+}else{
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
